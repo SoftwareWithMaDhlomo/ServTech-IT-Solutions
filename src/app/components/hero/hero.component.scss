@@ -1,0 +1,29 @@
+main {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/server-2160321_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+  color: white;
+  h1{
+    font-weight: 500;
+  }
+}
+
+#call-to-action {
+  background: #247ba0;
+  border: #247ba0 solid 0px;
+  border-radius: 2px;
+  padding: 10px;
+  text-transform: uppercase;
+  color: white;
+}

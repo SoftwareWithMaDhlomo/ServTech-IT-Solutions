@@ -1,0 +1,14 @@
+<div class="expansion-panel-mobile" *ngIf="isMobile">
+  <div class="expansion-panel-header" (click)="togglePanel()">Panel Header</div>
+  <div
+    class="expansion-panel-content"
+    [@panelState]="isExpanded ? 'expanded' : 'collapsed'"
+  >
+    <h1>Content</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus vel
+      voluptatum quae corporis rem. Voluptate quis id et eligendi pariatur
+      corporis beatae itaque dolore? Quisquam eum fugit ullam expedita debitis.
+    </p>
+  </div>
+</div>
