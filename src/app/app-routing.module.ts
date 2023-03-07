@@ -15,7 +15,7 @@ const routes: Routes = [
     title: 'Registration',
     component: RegistrationPageComponent,
   },
-  { path: 'login', title: 'Login', component: LoginPageComponent },
+  { path: 'random', title: 'Login', component: LoginPageComponent },
 ];
 
 @NgModule({
