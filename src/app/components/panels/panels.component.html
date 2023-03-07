@@ -1,15 +1,17 @@
-<div class="expansion-panel-mobile" *ngIf="isMobile">
+<main class="expansion-panel-mobile" *ngIf="isMobile">
   <div class="expansion-panel-header" (click)="togglePanel()">Panel Header</div>
   <div
     class="expansion-panel-content"
     [@panelState]="isExpanded ? 'expanded' : 'collapsed'"
     *ngIf="isExpanded"
   >
-
     <app-mini-panel></app-mini-panel>
+    <app-mini-panel></app-mini-panel>
+    <app-mini-panel></app-mini-panel>
+
     <h1>{{ heading }}</h1>
     <p>
-     {{ description }}
+      {{ description }}
     </p>
   </div>
-</div>
+</main>

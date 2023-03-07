@@ -25,7 +25,7 @@ import {
       state(
         'expanded',
         style({
-          height: 'fit-content',
+          height: 'auto',
           opacity: 1,
         })
       ),
