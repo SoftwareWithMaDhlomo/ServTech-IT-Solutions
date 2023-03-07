@@ -1,0 +1,52 @@
+.login-mobile {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("../../../assets/cpu-564785_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #form-container {
+    width: 60%;
+    height: fit-content;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  h1 {
+    color: #0582ca;
+    text-transform: uppercase;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  input {
+    margin: 10px;
+  }
+
+  .submit-button {
+    background: #0582ca;
+    border: 1px solid #0582ca;
+    border-radius: 4px;
+    padding: 12px;
+  }
+}

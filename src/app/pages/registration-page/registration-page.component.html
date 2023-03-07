@@ -1,11 +1,11 @@
 <main *ngIf="isMobile" class="registration-mobile">
   <div id="form-container">
     <h1>Register</h1>
-    <form (ngSubmit)="onSubmit()">
-      <input [(ngModel)]="name" type="text" name="name" id="name-field" placeholder="Enter your name" />
-      <input [(ngModel)]="username"  type="text" name="username" id="username-field" placeholder="Enter your username" />
-      <input [(ngModel)]="email" type="email" name="email" id="email-field" placeholder="Enter your email"/>
-      <input [(ngModel)]="password"  type="password" name="password" id="password-field" placeholder="Enter your password"/>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <input formControlName="name" type="text" name="name" id="name-field" placeholder="Enter your name" />
+      <input formControlName="username"  type="text" name="username" id="username-field" placeholder="Enter your username" />
+      <input formControlName="email" type="email" name="email" id="email-field" placeholder="Enter your email"/>
+      <input formControlName="password"  type="password" name="password" id="password-field" placeholder="Enter your password"/>
 
       <input class="submit-button" type="submit" value="Register">
     </form>

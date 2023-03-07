@@ -1,15 +1,21 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-interface ChuckNorrisJoke {
-  categories: string[];
-  created_at: string;
-  icon_url: string;
-  id: string;
-  updated_at: string;
-  url: string;
-  value: string;
+interface User {
+ role: string;
+ username: string;
+ name:string;
+ email: string;
+}
+
+interface FormData{
+  name: string;
+  username: string;
+  email: string;
+  password: string;
 }
 
 @Component({
@@ -19,15 +25,20 @@ interface ChuckNorrisJoke {
 })
 export class RegistrationPageComponent implements OnInit {
   isMobile: boolean = false;
-  name: string = '';
-  email: string = '';
-  username: string = '';
-  password: string = '';
+  registrationForm: FormGroup;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+    private router: Router
+  ) {
+    this.registrationForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+    });
+  }
 
   ngOnInit(): void {
     this.breakpointObserver.observe(Breakpoints.Handset).subscribe((result) => {
@@ -42,21 +53,12 @@ export class RegistrationPageComponent implements OnInit {
       }),
     };
 
-    let body = {
-      name: this.name,
-      username: this.username,
-      email: this.email,
-      password: this.password,
-    };
 
     this.http
-      .post<ChuckNorrisJoke>(
-        'http://192.168.0.134:9090/api/registration',
-        body,
-        httpOptions
-      )
+      .post<User>('http://192.168.0.134:9090/api/registration', this.registrationForm.value, httpOptions)
       .subscribe((result) => {
-        console.log(result.value);
+        console.log(`${result.email}, route -> ${this.router.url}`);
+
       });
   }
 }

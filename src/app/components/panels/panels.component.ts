@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import {
@@ -36,6 +36,8 @@ import {
 export class PanelsComponent {
   isExpanded = false;
   isMobile: boolean = false;
+  @Input() heading: string = '';
+  @Input() description: string = '';
 
   constructor(private breakpointObserver: BreakpointObserver) {
     breakpointObserver.observe(Breakpoints.Handset).subscribe((result) => {

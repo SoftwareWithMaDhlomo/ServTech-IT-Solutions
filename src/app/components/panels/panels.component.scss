@@ -12,6 +12,8 @@
 
   .expansion-panel-content {
     width: 100%;
+    height: fit-content;
+    margin: 10px;
     background: #FFFDFB;
     display: flex;
     flex-direction: column;

@@ -1,1 +1,23 @@
-<p>login-page works!</p>
+<main *ngIf="isMobile" class="login-mobile">
+  <div id="form-container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input
+        formControlName="username"
+        type="text"
+        name="username"
+        id="username-field"
+        placeholder="Enter your username"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        name="password"
+        id="password-field"
+        placeholder="Enter your password"
+      />
+
+      <input class="submit-button" type="submit" value="Login" />
+    </form>
+  </div>
+</main>
