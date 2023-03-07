@@ -14,6 +14,8 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
 import { HttpClientModule } from '@angular/common/http';
 import { MiniPanelComponent } from './components/mini-panel/mini-panel.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CardComponent } from './components/card/card.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     LoginPageComponent,
     RegistrationPageComponent,
     MiniPanelComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

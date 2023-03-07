@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 interface User {
- role: string;
- username: string;
- name:string;
- email: string;
+  role: string;
+  username: string;
+  name: string;
+  email: string;
 }
 
-interface FormData{
+interface FormData {
   name: string;
   username: string;
   email: string;
@@ -53,12 +53,14 @@ export class RegistrationPageComponent implements OnInit {
       }),
     };
 
-
     this.http
-      .post<User>('http://192.168.0.134:9090/api/registration', this.registrationForm.value, httpOptions)
+      .post<User>(
+        'http://192.168.0.134:9090/api/registration',
+        this.registrationForm.value,
+        httpOptions
+      )
       .subscribe((result) => {
         console.log(`${result.email}, route -> ${this.router.url}`);
-
       });
   }
 }
