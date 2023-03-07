@@ -1,20 +1,22 @@
 package com.serveTechIT.ServeTechIt.user.registration;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/api/registration")
 @AllArgsConstructor
+@CrossOrigin
 public class UserRegistrationController {
 
     private final RegistrationService registrationService;
 
     @PostMapping
-    public String registerUser(@RequestBody RegistrationRequest registrationRequest){
-        return registrationService.register(registrationRequest).toString();
+    public HashMap<String, Object> registerUser(@RequestBody RegistrationRequest registrationRequest){
+
+        return registrationService.register(registrationRequest);
+
     }
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/products")
 @AllArgsConstructor
+@CrossOrigin
 public class ProductController {
 
     {
@@ -19,9 +20,6 @@ public class ProductController {
 
     @GetMapping
     public List<Product> getProducts(){
-        System.out.println("Touched");
-        System.out.println(SecurityContextHolder.getContext().getAuthentication());
-
         return productService.getAllProducts();
     }
 

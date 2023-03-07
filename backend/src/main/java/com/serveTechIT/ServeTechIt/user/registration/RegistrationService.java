@@ -5,29 +5,28 @@ import com.serveTechIT.ServeTechIt.user.AppUserService;
 import com.serveTechIT.ServeTechIt.user.UserRepository;
 import com.serveTechIT.ServeTechIt.user.enums.AppUserRole;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-@Service
-@AllArgsConstructor
-public class RegistrationService {
+import java.util.HashMap;
 
-    private final UserRepository userRepository;
-    private final BCryptPasswordEncoder passwordEncoder;
+@Service
+
+public class RegistrationService extends AppUserService{
+
     private final AppUserService appUserService;
 
-    public AppUser register(RegistrationRequest registrationRequest) {
+    public RegistrationService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder, AppUserService appUserService) {
+        super(userRepository, passwordEncoder);
+        this.appUserService = appUserService;
+    }
+
+    public HashMap<String, Object> register(RegistrationRequest registrationRequest) {
         AppUser user = new AppUser(registrationRequest.name(), registrationRequest.username(),
                 registrationRequest.email(), registrationRequest.password(),
                 AppUserRole.USER);
 
 
-        System.out.println(appUserService.signUpUser(user));
-
-        String encoded = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encoded);
-
-        return userRepository.save(user);
+        return appUserService.signUpUser(user);
     }
 }
