@@ -1,6 +1,7 @@
 package com.serveTechIT.ServeTechIt.user.login;
 
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ public class UserLoginController {
 
     @GetMapping
     public String noPage(){
+        System.out.println(SecurityContextHolder.getContext().toString());
         return "Please login";
     }
 }
