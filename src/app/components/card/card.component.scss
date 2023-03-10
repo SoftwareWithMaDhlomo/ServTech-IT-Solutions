@@ -1,0 +1,27 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 400px;
+  height: fit-content;
+  background-color: #EEE5E9;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.image-container {
+  img {
+    height: 200px;
+    width: 400px;
+  }
+}
+.heading-container {
+    color: #00546c;
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0px 10px 0px;
+}
+.description-container {
+    width: 100%;
+    height: fit-content;
+}

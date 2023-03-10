@@ -7,6 +7,9 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { AboutComponent } from './components/about/about.component';
+import { CardComponent } from './components/card/card.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { HeroComponent } from './components/hero/hero.component';
     LandingPageComponent,
     ServicesPageComponent,
     NavbarComponent,
-    HeroComponent
+    HeroComponent,
+    AboutComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
