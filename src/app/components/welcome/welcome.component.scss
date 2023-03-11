@@ -1,0 +1,27 @@
+.welcome-desktop {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-text-container {
+  grid-area: 1 / 2 / 2 / 5;
+  color: #00546c;
+}
+.subtext-container {
+  grid-area: 2 / 1 / 4 / 6;
+  margin: 10px;
+}
+.call-to-action-container {
+  grid-area: 4 / 3 / 5 / 4;
+  button{
+    background: #00546c;
+    border: solid 1px #00546c;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

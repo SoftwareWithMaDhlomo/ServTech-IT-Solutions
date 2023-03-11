@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { CardComponent } from './components/card/card.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { HighlightsComponent } from './components/highlights/highlights.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     HeroComponent,
     AboutComponent,
-    CardComponent
+    CardComponent,
+    WelcomeComponent,
+    HighlightsComponent
   ],
   imports: [
     BrowserModule,

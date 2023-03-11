@@ -1,0 +1,38 @@
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  app-card {
+    margin: 10px;
+  }
+}
+
+.highlight-cards-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+  background: #00546c;
+  padding: 10px;
+  .heading-container {
+    margin-top: 20px;
+    width: 70%;
+    text-align: center;
+    border-radius: 8px;
+    background: white;
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  app-card {
+    padding: 10px;
+    text-align: center;
+  }
+}
